@@ -11,71 +11,69 @@ Clonar este projeto junto do recogito-core-mvc(https://github.com/lucaspimenteld
 `npm install` <br>
 `npm link @recogito/recogito-client-core`
 
-<p align="center">
-  <img width="345" src="https://raw.githubusercontent.com/recogito/annotorious/master/annotorious-logo-white-small.png" />
-  <br/><br/>
-</p>
+## Using it with vue
 
-[![](https://data.jsdelivr.com/v1/package/npm/@recogito/annotorious/badge)](https://www.jsdelivr.com/package/npm/@recogito/annotorious)
-
-A JavaScript image annotation library. Add drawing, commenting and labeling functionality to images
-in Web pages with just a few lines of code. Weighs less than 300kB. See the [project website](https://recogito.github.io/annotorious/)
-for details and live demos.
-
-<img width="620" src="https://raw.githubusercontent.com/recogito/annotorious/master/screenshot.jpg" />
-
-## Installing
-
-If you use npm, `npm install @recogito/annotorious` and 
-
-```javascript
-import { Annotorious } from '@recogito/annotorious';
-
-import '@recogito/annotorious/dist/annotorious.min.css';
-
-const anno = new Annotorious({ image: 'hallstatt' }); // image element or ID
-```
-
-Otherwise download the [latest release](https://github.com/recogito/annotorious/releases/latest)
-and include it in your web page.
+Below is a minimal example for using Annotorious in Vue.js. Thanks to 
+[Grant Brits](https://github.com/gbrits) for this contribution!
 
 ```html
-<link rel="stylesheet" href="annotorious.min.css">
-<script src="annotorious.min.js"></script>
-```
-
-## Using
-
-```html
-<body>
-  <div id="content">
-    <img id="hallstatt" src="640px-Hallstatt.jpg">
+<template>
+  <div>
+    <img id="plan" src="img.png" style="width: 100%; max-width: 1024px;" />
   </div>
-  <script>
-    (function() {
-      var anno = Annotorious.init({
-        image: 'hallstatt'
-      });
+</template>
 
-      anno.loadAnnotations('annotations.w3c.json');
-    })()
-  </script>
-  <script type="text/javascript" src="annotorious.min.js"></script>
-</body>
+<script>
+  import { Annotorious} from '@recogito/annotorious';
+  import '@recogito/annotorious/dist/annotorious.min.css';
+
+  export default {
+    
+    data() {
+      return {
+        anno: null
+      }
+    },
+
+    methods: {
+      initAnno() {
+        this.anno = new Annotorious({
+          image: document.getElementById("plan")
+        });
+
+        this.anno.on('createAnnotation', function (annotation) {
+          console.log('Created annotation', annotation);
+        });
+
+        this.anno.on('createSelection', function (selection) {
+          console.log('Created selection', selection);
+        });
+
+        this.anno.on('deleteAnnotation', function (annotation) {
+          console.log('Delete annotation', selection);
+        });
+
+        this.anno.on('mouseEnterAnnotation', function (annotation, element) {
+          console.log('Mouse ENTERED annotation', annotation);
+        });
+
+        this.anno.on('selectAnnotation', function (annotation, element) {
+          console.log('Select annotation', annotation);
+        });
+
+        this.anno.on('cancelSelected', function (selection) {
+          console.log('UNSELECTED');
+        });
+
+        this.anno.on('clickAnnotation', function (annotation, element) {
+          console.log('Clicked annotation', annotation);
+        });
+      }
+    },
+
+    mounted() {
+      this.initAnno();
+    }
+  }
+</script>
 ```
-Full documentation is [on the project website](https://recogito.github.io/annotorious/). Questions? Feedack? Feature requests? Join the 
-[Annotorious chat on Gitter](https://gitter.im/recogito/annotorious).
-
-[![Join the chat at https://gitter.im/recogito/annotorious](https://badges.gitter.im/recogito/annotorious.svg)](https://gitter.im/recogito/annotorious?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-## License
-
-[BSD 3-Clause](LICENSE) (= feel free to use this code in whatever way
-you wish. But keep the attribution/license file, and if this code
-breaks something, don't complain to us :-)
-
-## Who's Using Annotorious
-
-![NHS Wales Logo](logos/NHSWalesCavLogo.png) &nbsp; [![MicroPasts Logo](logos/MicroPasts.png)](https://crowdsourced.micropasts.org/)
-
-Using Annotorious? [Let us know!](https://gitter.im/recogito/annotorious)

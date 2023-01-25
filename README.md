@@ -6,7 +6,7 @@ Clonar este projeto junto do recogito-core-mvc(https://github.com/lucaspimenteld
 `npm install`
 `npm link`
 `cd ..` voltar à pasta raíz dos dois projetos
--------
+
 `cd annotorious-mvc`
 `npm install`
 `npm link @recogito/recogito-client-core`

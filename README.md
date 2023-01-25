@@ -1,5 +1,7 @@
 ## MVC
 Para usar a tradução para o português:
+
+## Avulso
 Clonar este projeto junto do recogito-core-mvc(https://github.com/lucaspimenteldb/recogito-core-mvc) na mesma pasta
 
 `cd recogito-core-mvc` <br>
@@ -11,7 +13,17 @@ Clonar este projeto junto do recogito-core-mvc(https://github.com/lucaspimenteld
 `npm install` <br>
 `npm link @recogito/recogito-client-core`
 
-## Using it with vue
+## Num projeto Vue
+Na mesma pasta do projeto vue
+`git clone https://github.com/lucaspimenteldb/recogito-core-mvc`
+`cd recogito-core-mvc` <br>
+`npm install` <br>
+`npm link` <br>
+`cd ..` voltar à pasta raíz dos dois projetos 
+
+`cd projeto vue` <br>
+`npm install @recogito/annotorious` <br>
+`npm link @recogito/recogito-client-core`
 
 ```html
 <template>

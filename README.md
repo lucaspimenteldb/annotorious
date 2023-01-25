@@ -4,17 +4,17 @@ Para usar a tradução para o português:
 ## Avulso
 Clonar este projeto junto do recogito-core-mvc(https://github.com/lucaspimenteldb/recogito-core-mvc) na mesma pasta
 
-`cd recogito-core-mvc` <br>
+`cd recogito-client-core` <br>
 `npm install` <br>
 `npm link` <br>
 `cd ..` voltar à pasta raíz dos dois projetos 
 
-`cd annotorious-mvc` <br>
+`cd annotorious` <br>
 `npm install` <br>
 `npm link @recogito/recogito-client-core`
 
 ## Num projeto Vue
-Na mesma pasta do projeto vue
+Na mesma pasta onde está o projeto vue, NÃO DENTRO DO PROJETO VUE
 
 `git clone https://github.com/lucaspimenteldb/recogito-client-core` <br>
 `cd recogito-client-core` <br>

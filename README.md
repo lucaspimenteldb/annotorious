@@ -2,7 +2,7 @@
 Para usar a tradução para o português:
 Clonar este projeto junto do recogito-core-mvc(https://github.com/lucaspimenteldb/recogito-core-mvc) na mesma página
 
-`cd recogito-core-mvc`
+`cd recogito-core-mvc` <br>
 `npm install`
 `npm link`
 `cd ..` voltar à pasta raíz dos dois projetos

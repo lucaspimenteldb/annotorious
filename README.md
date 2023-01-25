@@ -15,7 +15,8 @@ Clonar este projeto junto do recogito-core-mvc(https://github.com/lucaspimenteld
 
 ## Num projeto Vue
 Na mesma pasta do projeto vue
-`git clone https://github.com/lucaspimenteldb/recogito-core-mvc`
+
+`git clone https://github.com/lucaspimenteldb/recogito-core-mvc` <br>
 `cd recogito-core-mvc` <br>
 `npm install` <br>
 `npm link` <br>

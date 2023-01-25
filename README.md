@@ -22,7 +22,7 @@ Na mesma pasta do projeto vue
 `npm link` <br>
 `cd ..` voltar à pasta raíz dos dois projetos 
 
-`cd projeto vue` <br>
+`cd projeto-vue` <br>
 `npm install @recogito/annotorious` <br>
 `npm link @recogito/recogito-client-core`
 
